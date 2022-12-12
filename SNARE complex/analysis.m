@@ -1,3 +1,6 @@
+% This script analyzes sample data obtained with a SNARE complex. 
+% Data structure is the same as described in "analysis.m" in the "force calibration" directory. 
+
 %% load data
 % set parameters
 Rbead = 1400; % MB radius in nm
