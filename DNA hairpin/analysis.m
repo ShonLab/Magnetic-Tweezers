@@ -119,7 +119,7 @@ plot(dzdat_model_open,Fdat_model,'r');
 xlim([310,350]); ylim([4,8]);
 xlabel('Extension (nm)'); ylabel('Force (pN)');
 
-saveas(gcf,'DNA hairpin_force clamp.fig');
+saveas(gcf,'DNA hairpin_force ramp.fig');
 
 %% force clamp
 h = figure(2); clf; h.WindowState = 'maximized';
