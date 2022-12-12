@@ -71,6 +71,7 @@ save('analysis');
 
 %% force ramp
 % force-extension model
+% For the description of the models, see: https://www.nature.com/articles/s41467-018-06122-3 (DOI: 10.1038/s41467-018-06122-3)
 Fdat_ref = (0:.1:20)';
 Lo_dsDNA = (1020)*.338; Lp_dsDNA = 37; Ko_dsDNA = 400; % dsDNA handle
 zdat_model_dsDNA = eWLC_inv(Fdat_ref,Lo_dsDNA,Lp_dsDNA,T,Ko_dsDNA,1);
@@ -87,7 +88,6 @@ dzdat_model_LO = dzdat_model_FZ + WLC_inv(Fdat_ref,nLc_PP*23,Lp_PP,T,1); % 12 an
 dzdat_model_HZ = dzdat_model_LO - 2 + WLC_inv(Fdat_ref,nLc_PP*(nAA_frayed_SB+nAA_frayed_SX),Lp_PP,T,1) + 2./sin(atan(2./(nAA_frayed_SB-nAA_frayed_SX)/nLc_helix));
 dzdat_model_UZ = dzdat_model_LO - 2 + WLC_inv(Fdat_ref,nLc_PP*(nAA_frayed_SB2+nAA_frayed_SX2),Lp_PP,T,1) + 2./sin(atan(2./(nAA_frayed_SB2-nAA_frayed_SX2)/nLc_helix));
 dzdat_model_UF = dzdat_model_FZ - 2 + WLC_inv(Fdat_ref,nLc_PP*129,Lp_PP,T,1); % 65 and 64 from SB and SX
-% For the description of the models, see: https://www.nature.com/articles/s41467-018-06122-3 (DOI: 10.1038/s41467-018-06122-3)
 
 h = figure(1); clf; h.WindowState = 'maximized';
 set(gcf,'defaultaxesfontsize',12);
